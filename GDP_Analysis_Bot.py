@@ -21,16 +21,19 @@ print('\n')
 
 # While loop to keep user in until want to leave
 while True:
-    user_input = int(input('''
+    user_input = input('''
 -----------------MENU-----------------
 1. Summarize country GDP stats
 2. Compare 2 countries GDP stats
 3. Countries projected GDP
 4. Quit 
     -->
-'''))
+''')
     while user_input not in [1, 2, 3, 4]:
-        user_input = int(input('Choose 1, 2, 3, 4 from menu options: '))
+        try:
+            user_input = int(user_input)
+        except:
+            user_input = input('Choose 1, 2, 3, 4 from menu options: ')
         
     if user_input == 1: 
         # User select country. While invalid, ask for valid input
